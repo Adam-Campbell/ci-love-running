@@ -150,7 +150,21 @@ main {
     padding: 0 20px;
 }
 
+#benefits-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat center center/cover;
+    width: 90vw;
+    height: 90vw;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
 
 
 /*********
@@ -203,10 +217,48 @@ main {
         width: 300px;
         right: 50px;
     }
+
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    #benefits-physical > div,
+    #benefits-mental > div {
+        width: 75%;
+    }
+    #benefits-mental > div {
+        text-align: end;
+        align-self: flex-end;
+    }
 }
 
 @media (min-width: 992px) {
     #menu a:hover {
         border-bottom: solid 1px #3a3a3a;
+    } 
+}
+
+@media (min-width: 1200px) {
+    #benefits {
+        display: flex;
+    }
+    #benefits-mental {
+        order: 1;
+    }
+    /*#benefits-physical,
+    #benefits-mental,
+    #benefits-image {
+        flex-grow: 1;
+    }*/
+    #benefits > div {
+        flex: 1;
+    }
+    #benefits-mental > div {
+        align-self: flex-start;
+    }
+    #benefits-physical > div {
+        align-self: flex-end;
     }
 }
