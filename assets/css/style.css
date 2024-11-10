@@ -265,6 +265,17 @@ main {
 /****************
   Media queries
 ****************/
+
+/* Large or landscape phones and up */
+@media screen and (min-width: 576px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
+
+/* Tablets and up */
 @media screen and (min-width: 768px) {
     nav {
         display: block;
@@ -309,12 +320,29 @@ main {
         text-align: end;
         align-self: flex-end;
     }
+    #photos {
+        column-count: 3;
+    }
 }
 
+/* Laptops and desktops */
 @media (min-width: 992px) {
     #menu a:hover {
         border-bottom: solid 1px #3a3a3a;
-    } 
+    }
+    #photos {
+        column-count: 4;
+    }
+    #photos div {
+        overflow: hidden;
+    }
+    #photos img {
+        transition: transform 0.4s ease-in-out;
+        transform: scale(1);
+    }
+    #photos img:hover {
+        transform: scale(1.1);
+    }
 }
 
 @media (min-width: 1200px) {
@@ -324,11 +352,6 @@ main {
     #benefits-mental {
         order: 1;
     }
-    /*#benefits-physical,
-    #benefits-mental,
-    #benefits-image {
-        flex-grow: 1;
-    }*/
     #benefits > div {
         flex: 1;
     }
